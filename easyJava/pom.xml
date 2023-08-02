@@ -8,5 +8,56 @@
     <artifactId>easyJava</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <mysql.version>8.0.28</mysql.version>
+        <apach.commons.version>3.4</apach.commons.version>
+        <logback.version>1.2.10</logback.version>
+        <slf-4j.version>1.7.7</slf-4j.version>
+        <fastjson.version>1.2.45</fastjson.version>
+    </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${apach.commons.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf-4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+
+    </dependencies>
+    <build>
+        <finalName>easyJavaTest</finalName>
+        <defaultGoal>compile</defaultGoal>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration> <!--让编译器使用本地的17版本jdk-->
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
